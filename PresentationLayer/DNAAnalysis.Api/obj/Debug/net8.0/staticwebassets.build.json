@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "v0saEpYzvV7AoQ7Z/pjEXtZbqD9Ec8tDxcFxwy7S1L8=",
+  "Source": "DNAAnalysis.Api",
+  "BasePath": "_content/DNAAnalysis.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

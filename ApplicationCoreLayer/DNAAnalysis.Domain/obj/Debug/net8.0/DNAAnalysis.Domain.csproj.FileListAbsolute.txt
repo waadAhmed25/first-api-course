@@ -1,0 +1,13 @@
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/bin/Debug/net8.0/DNAAnalysis.Domain.deps.json
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/bin/Debug/net8.0/DNAAnalysis.Domain.dll
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/bin/Debug/net8.0/DNAAnalysis.Domain.pdb
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/Debug/net8.0/DNAAnalysis.Domain.csproj.AssemblyReference.cache
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/Debug/net8.0/DNAAnalysis.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/Debug/net8.0/DNAAnalysis.Domain.AssemblyInfoInputs.cache
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/Debug/net8.0/DNAAnalysis.Domain.AssemblyInfo.cs
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/Debug/net8.0/DNAAnalysis.Domain.csproj.CoreCompileInputs.cache
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/Debug/net8.0/DNAAnalysis.Domain.sourcelink.json
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/Debug/net8.0/DNAAnalysis.Domain.dll
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/Debug/net8.0/refint/DNAAnalysis.Domain.dll
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/Debug/net8.0/DNAAnalysis.Domain.pdb
+/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/Debug/net8.0/ref/DNAAnalysis.Domain.dll

@@ -1,0 +1,12 @@
+@DNAAnalysisApi_HostAddress = http://localhost:5280
+
+GET {{DNAAnalysisApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+
+
+
+
+
+
+###

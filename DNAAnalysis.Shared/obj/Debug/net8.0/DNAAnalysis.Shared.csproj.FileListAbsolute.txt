@@ -1,0 +1,12 @@
+/workspaces/first-api-course/DNAAnalysis.Shared/bin/Debug/net8.0/DNAAnalysis.Shared.deps.json
+/workspaces/first-api-course/DNAAnalysis.Shared/bin/Debug/net8.0/DNAAnalysis.Shared.dll
+/workspaces/first-api-course/DNAAnalysis.Shared/bin/Debug/net8.0/DNAAnalysis.Shared.pdb
+/workspaces/first-api-course/DNAAnalysis.Shared/obj/Debug/net8.0/DNAAnalysis.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/workspaces/first-api-course/DNAAnalysis.Shared/obj/Debug/net8.0/DNAAnalysis.Shared.AssemblyInfoInputs.cache
+/workspaces/first-api-course/DNAAnalysis.Shared/obj/Debug/net8.0/DNAAnalysis.Shared.AssemblyInfo.cs
+/workspaces/first-api-course/DNAAnalysis.Shared/obj/Debug/net8.0/DNAAnalysis.Shared.csproj.CoreCompileInputs.cache
+/workspaces/first-api-course/DNAAnalysis.Shared/obj/Debug/net8.0/DNAAnalysis.Shared.sourcelink.json
+/workspaces/first-api-course/DNAAnalysis.Shared/obj/Debug/net8.0/DNAAnalysis.Shared.dll
+/workspaces/first-api-course/DNAAnalysis.Shared/obj/Debug/net8.0/refint/DNAAnalysis.Shared.dll
+/workspaces/first-api-course/DNAAnalysis.Shared/obj/Debug/net8.0/DNAAnalysis.Shared.pdb
+/workspaces/first-api-course/DNAAnalysis.Shared/obj/Debug/net8.0/ref/DNAAnalysis.Shared.dll

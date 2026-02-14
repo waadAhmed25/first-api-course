@@ -1,0 +1,493 @@
+{
+  "format": 1,
+  "restore": {
+    "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Api/DNAAnalysis.Api.csproj": {}
+  },
+  "projects": {
+    "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/DNAAnalysis.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/DNAAnalysis.Domain.csproj",
+        "projectName": "DNAAnalysis.Domain",
+        "projectPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/DNAAnalysis.Domain.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services.Abstraction/DNAAnalysis.Services.Abstraction.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services.Abstraction/DNAAnalysis.Services.Abstraction.csproj",
+        "projectName": "DNAAnalysis.Services.Abstraction",
+        "projectPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services.Abstraction/DNAAnalysis.Services.Abstraction.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services.Abstraction/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/DNAAnalysis.Domain.csproj": {
+                "projectPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/DNAAnalysis.Domain.csproj"
+              },
+              "/workspaces/first-api-course/DNAAnalysis.Shared/DNAAnalysis.Shared.csproj": {
+                "projectPath": "/workspaces/first-api-course/DNAAnalysis.Shared/DNAAnalysis.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services/DNAAnalysis.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services/DNAAnalysis.Services.csproj",
+        "projectName": "DNAAnalysis.Services",
+        "projectPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services/DNAAnalysis.Services.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/DNAAnalysis.Domain.csproj": {
+                "projectPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/DNAAnalysis.Domain.csproj"
+              },
+              "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services.Abstraction/DNAAnalysis.Services.Abstraction.csproj": {
+                "projectPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services.Abstraction/DNAAnalysis.Services.Abstraction.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspaces/first-api-course/DNAAnalysis.Shared/DNAAnalysis.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspaces/first-api-course/DNAAnalysis.Shared/DNAAnalysis.Shared.csproj",
+        "projectName": "DNAAnalysis.Shared",
+        "projectPath": "/workspaces/first-api-course/DNAAnalysis.Shared/DNAAnalysis.Shared.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/first-api-course/DNAAnalysis.Shared/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspaces/first-api-course/InfrastructureLayer/DNAAnalysis.Persistence/DNAAnalysis.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspaces/first-api-course/InfrastructureLayer/DNAAnalysis.Persistence/DNAAnalysis.Persistence.csproj",
+        "projectName": "DNAAnalysis.Persistence",
+        "projectPath": "/workspaces/first-api-course/InfrastructureLayer/DNAAnalysis.Persistence/DNAAnalysis.Persistence.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/first-api-course/InfrastructureLayer/DNAAnalysis.Persistence/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/DNAAnalysis.Domain.csproj": {
+                "projectPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Domain/DNAAnalysis.Domain.csproj"
+              },
+              "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services.Abstraction/DNAAnalysis.Services.Abstraction.csproj": {
+                "projectPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services.Abstraction/DNAAnalysis.Services.Abstraction.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Api/DNAAnalysis.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Api/DNAAnalysis.Api.csproj",
+        "projectName": "DNAAnalysis.Api",
+        "projectPath": "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Api/DNAAnalysis.Api.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services/DNAAnalysis.Services.csproj": {
+                "projectPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services/DNAAnalysis.Services.csproj"
+              },
+              "/workspaces/first-api-course/InfrastructureLayer/DNAAnalysis.Persistence/DNAAnalysis.Persistence.csproj": {
+                "projectPath": "/workspaces/first-api-course/InfrastructureLayer/DNAAnalysis.Persistence/DNAAnalysis.Persistence.csproj"
+              },
+              "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Presentation/DNAAnalysis.Presentation.csproj": {
+                "projectPath": "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Presentation/DNAAnalysis.Presentation.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Presentation/DNAAnalysis.Presentation.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Presentation/DNAAnalysis.Presentation.csproj",
+        "projectName": "DNAAnalysis.Presentation",
+        "projectPath": "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Presentation/DNAAnalysis.Presentation.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/first-api-course/PresentationLayer/DNAAnalysis.Presentation/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services.Abstraction/DNAAnalysis.Services.Abstraction.csproj": {
+                "projectPath": "/workspaces/first-api-course/ApplicationCoreLayer/DNAAnalysis.Services.Abstraction/DNAAnalysis.Services.Abstraction.csproj"
+              },
+              "/workspaces/first-api-course/DNAAnalysis.Shared/DNAAnalysis.Shared.csproj": {
+                "projectPath": "/workspaces/first-api-course/DNAAnalysis.Shared/DNAAnalysis.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.414/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
