@@ -1,0 +1,6 @@
+{
+  "name": "ASP.NET 8 Dev",
+  "image": "mcr.microsoft.com/devcontainers/dotnet:8.0",
+  "features": {},
+  "postCreateCommand": "dotnet --version"
+}
