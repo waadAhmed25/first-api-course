@@ -9,6 +9,13 @@ public interface IDrugService
     Task<DrugInteractionDto?> GetByIdAsync(int id);
 
     Task AddAsync(DrugInteractionDto dto);
+
     Task<IEnumerable<DrugInteractionDto>> GetUserDrugInteractionsAsync(string userId);
-Task<bool> DeleteInteractionAsync(int id, string userId);
+
+    Task<bool> DeleteInteractionAsync(int id, string userId);
+
+    // ✅ أضيفي دي
+    Task<DrugInteractionDto> CheckInteractionAsync(
+        CheckDrugInteractionRequest request,
+        string userId);
 }

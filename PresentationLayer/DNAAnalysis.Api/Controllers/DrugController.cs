@@ -80,4 +80,15 @@ public class DrugController : ControllerBase
     {
         return User.FindFirst(ClaimTypes.NameIdentifier)?.Value!;
     }
+
+    [HttpPost("check-interaction")]
+public async Task<ActionResult<DrugInteractionDto>> CheckInteraction(
+    CheckDrugInteractionRequest request)
+{
+    var userId = GetUserId();
+
+    var result = await _drugService.CheckInteractionAsync(request, userId);
+
+    return Ok(result);
+}
 }

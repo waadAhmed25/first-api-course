@@ -10,11 +10,16 @@ public class DrugService : IDrugService
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
+    private readonly IDrugInteractionClient _drugClient;
 
-    public DrugService(IUnitOfWork unitOfWork, IMapper mapper)
+    public DrugService(
+        IUnitOfWork unitOfWork,
+        IMapper mapper,
+        IDrugInteractionClient drugClient)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
+        _drugClient = drugClient;
     }
 
     // ================= GET ALL =================
@@ -71,11 +76,31 @@ public class DrugService : IDrugService
         if (interaction.UserId != userId)
             return false;
 
-        // ✅ اسمها Remove مش Delete
         repo.Remove(interaction);
 
         await _unitOfWork.SaveChangeAsync();
 
         return true;
+    }
+
+    // ================= CHECK INTERACTION (AI) =================
+    public async Task<DrugInteractionDto> CheckInteractionAsync(
+        CheckDrugInteractionRequest request,
+        string userId)
+    {
+        // 1️⃣ Call AI Client
+        var aiResult = await _drugClient.CheckInteractionAsync(request);
+
+        // 2️⃣ Attach UserId
+        aiResult.UserId = userId;
+
+        // 3️⃣ Save to Database
+        var repo = _unitOfWork.GetRepository<DrugInteraction, int>();
+        var entity = _mapper.Map<DrugInteraction>(aiResult);
+
+        await repo.AddAsync(entity);
+        await _unitOfWork.SaveChangeAsync();
+
+        return aiResult;
     }
 }

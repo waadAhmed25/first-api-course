@@ -97,6 +97,7 @@ builder.Services.AddAutoMapper(typeof(DrugProfile).Assembly);
 
 // ===== Drug Module Service =====
 builder.Services.AddScoped<IDrugService, DrugService>();
+builder.Services.AddScoped<IDrugInteractionClient, FakeDrugInteractionClient>();
 
 // ================= JWT Authentication =================
 builder.Services.AddAuthentication(options =>
