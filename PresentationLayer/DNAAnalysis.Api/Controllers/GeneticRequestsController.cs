@@ -4,6 +4,7 @@ using System.Security.Claims;
 using DNAAnalysis.Services.Abstraction;
 using DNAAnalysis.Shared.GeneticRequestDtos;
 using DNAAnalysis.Api.Requests;
+using DNAAnalysis.API.Responses;
 
 namespace DNAAnalysis.Api.Controllers;
 
@@ -25,12 +26,13 @@ public class GeneticRequestsController : ControllerBase
 
     [Authorize]
     [HttpPost]
-    public async Task<IActionResult> Create([FromForm] CreateGeneticRequestFormDto form)
+    public async Task<ActionResult<ApiResponse<object>>> Create([FromForm] CreateGeneticRequestFormDto form)
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
         if (userId is null)
-            return Unauthorized();
+            return Unauthorized(new ApiResponse<string>(
+                new List<string> { "Unauthorized" }, "User not authenticated"));
 
         string? fatherPath = null;
         string? motherPath = null;
@@ -39,14 +41,16 @@ public class GeneticRequestsController : ControllerBase
         if (form.CombinedFile != null)
         {
             if (!ValidateFile(form.CombinedFile))
-                return BadRequest("Invalid file (type or size)");
+                return BadRequest(new ApiResponse<string>(
+                    new List<string> { "Invalid file (type or size)" }, "Validation Error"));
 
             fatherPath = await SaveFileAsync(form.CombinedFile);
         }
         else if (form.FatherFile != null && form.MotherFile != null)
         {
             if (!ValidateFile(form.FatherFile) || !ValidateFile(form.MotherFile))
-                return BadRequest("Invalid file (type or size)");
+                return BadRequest(new ApiResponse<string>(
+                    new List<string> { "Invalid file (type or size)" }, "Validation Error"));
 
             fatherPath = await SaveFileAsync(form.FatherFile);
             motherPath = await SaveFileAsync(form.MotherFile);
@@ -54,14 +58,16 @@ public class GeneticRequestsController : ControllerBase
             if (form.ChildFile != null)
             {
                 if (!ValidateFile(form.ChildFile))
-                    return BadRequest("Invalid child file");
+                    return BadRequest(new ApiResponse<string>(
+                        new List<string> { "Invalid child file" }, "Validation Error"));
 
                 childPath = await SaveFileAsync(form.ChildFile);
             }
         }
         else
         {
-            return BadRequest("Invalid file input");
+            return BadRequest(new ApiResponse<string>(
+                new List<string> { "Invalid file input" }, "Validation Error"));
         }
 
         var dto = new CreateGeneticRequestDto
@@ -73,56 +79,71 @@ public class GeneticRequestsController : ControllerBase
 
         var requestId = await _service.CreateRequestAsync(userId, dto);
 
-        return Ok(new { Id = requestId });
+        return Ok(new ApiResponse<object>(
+            new { Id = requestId },
+            "Genetic request created successfully"));
     }
 
     [Authorize]
     [HttpGet("my")]
-    public async Task<IActionResult> GetMyRequests()
+    public async Task<ActionResult<ApiResponse<object>>> GetMyRequests()
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
         if (userId is null)
-            return Unauthorized();
+            return Unauthorized(new ApiResponse<string>(
+                new List<string> { "Unauthorized" }, "User not authenticated"));
 
         var requests = await _service.GetUserRequestsAsync(userId);
 
-        return Ok(requests);
+        return Ok(new ApiResponse<object>(
+            requests,
+            "User requests retrieved successfully"));
     }
 
     [Authorize]
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id)
+    public async Task<ActionResult<ApiResponse<object>>> GetById(int id)
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
         if (userId is null)
-            return Unauthorized();
+            return Unauthorized(new ApiResponse<string>(
+                new List<string> { "Unauthorized" }, "User not authenticated"));
 
         var request = await _service.GetByIdForUserAsync(id, userId, User.IsInRole("Admin"));
 
         if (request is null)
-            return NotFound();
+            return NotFound(new ApiResponse<string>(
+                new List<string> { "Request not found" }, "Not Found"));
 
-        return Ok(request);
+        return Ok(new ApiResponse<object>(
+            request,
+            "Request retrieved successfully"));
     }
 
     // ================= ADMIN =================
 
     [Authorize(Roles = "Admin")]
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public async Task<ActionResult<ApiResponse<object>>> GetAll()
     {
         var requests = await _service.GetAllRequestsAsync();
-        return Ok(requests);
+
+        return Ok(new ApiResponse<object>(
+            requests,
+            "All requests retrieved successfully"));
     }
 
     [Authorize(Roles = "Admin")]
     [HttpPut("{id}/status")]
-    public async Task<IActionResult> UpdateStatus(int id, UpdateRequestStatusDto dto)
+    public async Task<ActionResult<ApiResponse<string>>> UpdateStatus(int id, UpdateRequestStatusDto dto)
     {
         await _service.UpdateStatusAsync(id, dto.Status);
-        return NoContent();
+
+        return Ok(new ApiResponse<string>(
+            "Status updated successfully",
+            "Update completed"));
     }
 
     // ================= PRIVATE =================

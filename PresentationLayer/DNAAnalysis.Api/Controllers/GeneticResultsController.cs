@@ -1,6 +1,7 @@
 using DNAAnalysis.Services.Abstraction;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using DNAAnalysis.API.Responses;
 
 namespace DNAAnalysis.Api.Controllers
 {
@@ -17,14 +18,17 @@ namespace DNAAnalysis.Api.Controllers
 
         [Authorize]
         [HttpGet("{requestId}")]
-        public async Task<IActionResult> GetResult(int requestId)
+        public async Task<ActionResult<ApiResponse<object>>> GetResult(int requestId)
         {
             var result = await _resultService.GetResultByRequestIdAsync(requestId);
 
             if (result == null)
-                return NotFound();
+                return NotFound(new ApiResponse<string>(
+                    new List<string> { "Result not found" }, "Not Found"));
 
-            return Ok(result);
+            return Ok(new ApiResponse<object>(
+                result,
+                "Genetic result retrieved successfully"));
         }
     }
 }
