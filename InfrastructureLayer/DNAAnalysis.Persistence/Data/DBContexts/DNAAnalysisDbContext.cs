@@ -2,6 +2,7 @@ using DNAAnalysis.Domain.Entities.GeneticModule;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using DNAAnalysis.Domain.Entities.DrugModule;
+using DNAAnalysis.Domain.Entities.NutritionModule;
 
 namespace DNAAnalysis.Persistence.Data.DBContexts
 {
@@ -12,12 +13,19 @@ namespace DNAAnalysis.Persistence.Data.DBContexts
         {
         }
 
-        // ✅ هنا بنعمل DbSet لكل Entity في الموديول
+        // ✅ Genetic Module
         public DbSet<GeneticRequest> GeneticRequests { get; set; }
         public DbSet<GeneticResult> GeneticResults { get; set; }
+
+        // ✅ Drug Module
         public DbSet<DrugInteraction> DrugInteractions { get; set; }
 
-        // ✅ هنا بنخلي EF يشوف كل Configurations اللي عملناها
+        // ✅ Nutrition Module
+        public DbSet<NutritionProfile> NutritionProfiles { get; set; }
+        public DbSet<NutritionPlan> NutritionPlans { get; set; }
+        public DbSet<MealSuggestion> MealSuggestions { get; set; }
+
+        // ✅ Apply Configurations
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
