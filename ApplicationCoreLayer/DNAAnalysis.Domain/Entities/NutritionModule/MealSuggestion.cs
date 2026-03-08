@@ -1,9 +1,10 @@
+using DNAAnalysis.Domain.Entities;
+using DNAAnalysis.Shared.Enums;
+
 namespace DNAAnalysis.Domain.Entities.NutritionModule;
 
-public class MealSuggestion
+public class MealSuggestion : BaseEntity<int>
 {
-    public int Id { get; set; }
-
     public int NutritionPlanId { get; set; }
 
     public MealType MealType { get; set; }
@@ -11,6 +12,7 @@ public class MealSuggestion
     public string FoodName { get; set; } = null!;
 
     public int Calories { get; set; }
+       public int Grams { get; set; }
 
     public NutritionPlan NutritionPlan { get; set; } = null!;
 }

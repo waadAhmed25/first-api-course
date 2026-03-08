@@ -5,7 +5,7 @@ using DNAAnalysis.Persistence.Data.DBContexts;
 using System.Linq.Expressions;
 
 namespace DNAAnalysis.Persistence.Repository
-{
+{ 
     public class GenericRepository<TEntity, TKey>
         : IGenericRepository<TEntity, TKey>
         where TEntity : BaseEntity<TKey>

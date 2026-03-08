@@ -1,12 +1,9 @@
-using DNAAnalysis.Domain.Entities;
 using DNAAnalysis.Shared.Enums;
 
-namespace DNAAnalysis.Domain.Entities.NutritionModule;
+namespace DNAAnalysis.Shared.NutritionDtos;
 
-public class NutritionProfile : BaseEntity<int>
+public class CreateNutritionProfileDto
 {
-    public string UserId { get; set; } = null!;
-
     public double Weight { get; set; }
 
     public double Height { get; set; }
@@ -18,6 +15,4 @@ public class NutritionProfile : BaseEntity<int>
     public ActivityLevel ActivityLevel { get; set; }
 
     public PatientStatus PatientStatus { get; set; }
-
-    public NutritionPlan? NutritionPlan { get; set; }
 }

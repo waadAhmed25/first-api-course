@@ -1,9 +1,9 @@
+using DNAAnalysis.Domain.Entities;
+
 namespace DNAAnalysis.Domain.Entities.NutritionModule;
 
-public class NutritionPlan
+public class NutritionPlan : BaseEntity<int>
 {
-    public int Id { get; set; }
-
     public int NutritionProfileId { get; set; }
 
     public int TotalCalories { get; set; }

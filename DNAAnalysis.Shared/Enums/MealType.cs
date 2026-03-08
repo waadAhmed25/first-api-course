@@ -1,4 +1,4 @@
-namespace DNAAnalysis.Domain.Entities.NutritionModule;
+namespace DNAAnalysis.Shared.Enums;
 
 public enum MealType
 {

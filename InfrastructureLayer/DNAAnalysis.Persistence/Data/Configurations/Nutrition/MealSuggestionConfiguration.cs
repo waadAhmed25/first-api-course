@@ -17,6 +17,9 @@ public class MealSuggestionConfiguration : IEntityTypeConfiguration<MealSuggesti
         builder.Property(x => x.Calories)
             .IsRequired();
 
+            builder.Property(x => x.Grams)
+            .IsRequired();
+
         builder.Property(x => x.MealType)
             .IsRequired();
     }
