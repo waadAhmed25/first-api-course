@@ -25,5 +25,9 @@ public class NutritionPlanConfiguration : IEntityTypeConfiguration<NutritionPlan
         builder.HasMany(x => x.MealSuggestions)
             .WithOne(x => x.NutritionPlan)
             .HasForeignKey(x => x.NutritionPlanId);
+            
+            builder
+            .HasIndex(x => x.NutritionProfileId)
+            .IsUnique();
     }
 }

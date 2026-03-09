@@ -1,3 +1,4 @@
+using DNAAnalysis.API.Responses;
 using DNAAnalysis.ServiceAbstraction;
 using DNAAnalysis.Shared.NutritionDtos;
 using Microsoft.AspNetCore.Authorization;
@@ -30,7 +31,10 @@ public class NutritionController : ControllerBase
 
         await _nutritionService.CreateProfileAsync(userId, dto);
 
-        return Ok("Profile saved");
+        return Ok(new ApiResponse<string>(
+            "Profile saved successfully",
+            "Nutrition profile created"
+        ));
     }
 
     [HttpPost("generate-plan")]
@@ -41,9 +45,17 @@ public class NutritionController : ControllerBase
         var plan = await _nutritionService.GeneratePlanAsync(userId);
 
         if (plan == null)
-            return BadRequest("Plan generation failed");
+        {
+            return BadRequest(new ApiResponse<string>(
+                new[] { "Plan generation failed" },
+                "Unable to generate plan"
+            ));
+        }
 
-        return Ok(plan);
+        return Ok(new ApiResponse<NutritionPlanDto>(
+            plan,
+            "Nutrition plan generated successfully"
+        ));
     }
 
     [HttpGet("my-plan")]
@@ -54,8 +66,16 @@ public class NutritionController : ControllerBase
         var plan = await _nutritionService.GetUserPlanAsync(userId);
 
         if (plan == null)
-            return NotFound("No plan found");
+        {
+            return NotFound(new ApiResponse<string>(
+                new[] { "No nutrition plan found for this user" },
+                "Plan not found"
+            ));
+        }
 
-        return Ok(plan);
+        return Ok(new ApiResponse<NutritionPlanDto>(
+            plan,
+            "Nutrition plan retrieved successfully"
+        ));
     }
 }

@@ -18,6 +18,7 @@ using DNAAnalysis.Services.MappingProfiles;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Serilog;
+using DNAAnalysis.ServiceAbstraction;
 
 // ================= SERILOG CONFIG =================
 Log.Logger = new LoggerConfiguration()
@@ -110,6 +111,9 @@ builder.Services.AddAutoMapper(typeof(DrugProfile).Assembly);
 // ===== Drug Module Service =====
 builder.Services.AddScoped<IDrugService, DrugService>();
 builder.Services.AddScoped<IDrugInteractionClient, FakeDrugInteractionClient>();
+
+// ===== Nutrition Module Service =====
+builder.Services.AddScoped<INutritionService, NutritionService>();
 
 // ================= JWT Authentication =================
 builder.Services.AddAuthentication(options =>
